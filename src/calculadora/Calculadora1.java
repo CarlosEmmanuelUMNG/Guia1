@@ -35,6 +35,7 @@ String operacion;
         botonc = new javax.swing.JButton();
         boton0 = new javax.swing.JButton();
         botonigual = new javax.swing.JButton();
+        botonpotencia1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -222,6 +223,14 @@ String operacion;
             }
         });
 
+        botonpotencia1.setBackground(new java.awt.Color(204, 204, 204));
+        botonpotencia1.setText("(-)");
+        botonpotencia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonpotencia1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -247,7 +256,9 @@ String operacion;
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(botonraiz, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                            .addComponent(botonpotencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(botonpotencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botonpotencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -284,7 +295,7 @@ String operacion;
                                 .addComponent(botontan, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(botoncos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(39, 39, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,16 +316,21 @@ String operacion;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(boton4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boton5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(boton7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boton8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boton9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(boton4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(boton5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(boton7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(boton8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(boton9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(botonpotencia1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(106, 106, 106)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(boton0, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonc, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -456,8 +472,9 @@ String operacion;
 
     private void botonpotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonpotenciaActionPerformed
         calculadora12.n1=Float.parseFloat(jLabel1.getText());
-        operacion="^";
         jLabel1.setText("");
+        calculadora12.potenene();
+        jLabel1.setText(String.valueOf(calculadora12.resul));
     }//GEN-LAST:event_botonpotenciaActionPerformed
 
     private void botoncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoncActionPerformed
@@ -496,12 +513,13 @@ switch(operacion){
         calculadora12.iva();
         jLabel1.setText(Float.toString(calculadora12.resul));
     break;
-    case "^":
-        calculadora12.potenene();
-        jLabel1.setText(Float.toString(calculadora12.resul));
-    break;
 }
     }//GEN-LAST:event_botonigualActionPerformed
+
+    private void botonpotencia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonpotencia1ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(jLabel1.getText()+"-");
+    }//GEN-LAST:event_botonpotencia1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -556,6 +574,7 @@ switch(operacion){
     private javax.swing.JButton botonigual;
     private javax.swing.JButton botonmultiplicacion;
     private javax.swing.JButton botonpotencia;
+    private javax.swing.JButton botonpotencia1;
     private javax.swing.JButton botonraiz;
     private javax.swing.JButton botonresta;
     private javax.swing.JButton botonsen;

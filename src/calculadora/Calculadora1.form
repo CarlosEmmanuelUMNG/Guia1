@@ -69,6 +69,8 @@
                               <Component id="botonraiz" pref="41" max="32767" attributes="0"/>
                               <Component id="botonpotencia" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="botonpotencia1" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -119,7 +121,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="140" pref="39" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -147,18 +149,26 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="boton4" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="boton5" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="boton6" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="boton4" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="boton5" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="boton6" min="-2" pref="55" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="boton7" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="boton8" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="boton9" min="-2" pref="55" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="botonpotencia1" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="boton7" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="boton8" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="boton9" min="-2" pref="55" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="boton0" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
                               <Component id="botonc" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
@@ -449,6 +459,17 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonigualActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="botonpotencia1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="(-)"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonpotencia1ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
